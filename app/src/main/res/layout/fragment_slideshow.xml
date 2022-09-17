@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+
+        <TextView
+            android:id="@+id/titulo1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="#A38BC34A"
+            android:text="Carrito de compras"
+            android:textAlignment="center"
+            android:textColor="#3E3C3C"
+            android:textSize="30dp"
+            android:textStyle="bold"
+           />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reclyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titulo1"
+            android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>
+</ScrollView>

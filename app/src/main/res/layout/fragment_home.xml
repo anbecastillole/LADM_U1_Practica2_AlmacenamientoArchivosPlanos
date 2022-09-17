@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    android:backgroundTint="#F3A89E">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="Frutería Y Verdulería \n'La Huerta'"
+        android:textAlignment="center"
+        android:background="#A38BC34A"
+        android:textColor="#3E3C3C"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/descuento1"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_below="@id/titulo"
+        android:src="@drawable/descuento1" />
+
+    <TextView
+        android:id="@+id/extensosurtido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descuento1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="¡Extenso surtido en productos!"
+        android:textAlignment="center"
+        android:textColor="#064C09"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/frutas1"
+        android:layout_below="@id/extensosurtido"
+        android:id="@+id/frutas"
+        android:layout_marginStart="30dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/verduras"
+        android:layout_below="@id/extensosurtido"
+        android:id="@+id/verduras"
+        android:layout_toRightOf="@id/frutas" />
+
+    <TextView
+        android:id="@+id/textfrutas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frutas"
+        android:layout_marginLeft="70dp"
+        android:text="FRUTAS"
+        android:textAlignment="center"
+        android:textColor="#011001"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textverduras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frutas"
+        android:layout_toRightOf="@id/frutas"
+        android:layout_marginLeft="30dp"
+        android:text="VERDURAS"
+        android:textAlignment="center"
+        android:textColor="#011001"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/menulateral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textfrutas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="¡Accede a nuestro menú lateral para ver nuestros productos!"
+        android:textAlignment="center"
+        android:textColor="#701E04"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
+</ScrollView>

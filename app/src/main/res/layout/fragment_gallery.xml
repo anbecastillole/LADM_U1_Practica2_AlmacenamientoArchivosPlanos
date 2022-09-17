@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="Frutas"
+        android:textAlignment="center"
+        android:background="#A38BC34A"
+        android:textColor="#3E3C3C"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/extensosurtido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Selecciona la cantidad y deslizate hacia abajo para ver más opciones.\n Cuando tu pedido esté listo, da click sobre el carrito."
+        android:textAlignment="center"
+        android:textColor="#064C09"
+        android:textSize="20dp" />
+
+
+    <!--fresa-->
+    <TextView
+        android:id="@+id/fresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/extensosurtido"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="FRESA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/fresaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/fresa"
+        android:src="@drawable/fresas" />
+
+    <TextView
+        android:id="@+id/fresakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fresaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$40kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/fresacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/fresakg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/fresach"
+        />
+
+    <!-- durazno -->
+    <TextView
+        android:id="@+id/durazno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/extensosurtido"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/fresa"
+        android:text="DURAZNO"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/duraznoimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/fresa"
+        android:src="@drawable/durazno"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <TextView
+        android:id="@+id/duraznokg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/duraznoimg"
+        android:layout_marginLeft="80dp"
+        android:text="$50kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <EditText
+        android:id="@+id/duraznocant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fresaimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/fresakg"
+        android:layout_toRightOf="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/duraznoch"
+        />
+
+    <!-- Guayaba -->
+    <TextView
+        android:id="@+id/guayaba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fresach"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:text="GUAYABA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/guayabaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/guayaba"
+        android:src="@drawable/guayabas" />
+
+    <TextView
+        android:id="@+id/guayabakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guayabaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$25kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/guayabacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guayabaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/guayabach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guayabakg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--mango -->
+    <TextView
+        android:id="@+id/mango"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/duraznoch"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/fresa"
+        android:text="MANGO"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/mangoimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/mango"
+        android:layout_toRightOf="@id/fresaimg"
+        android:src="@drawable/mango" />
+
+    <TextView
+        android:id="@+id/mangokg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mangoimg"
+        android:layout_marginLeft="80dp"
+        android:text="$12kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <EditText
+        android:id="@+id/mangocant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mangoimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fresaimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/mangokg"
+        android:layout_toRightOf="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/mangoch"
+        />
+    <!--melon-->
+    <TextView
+        android:id="@+id/melon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guayabach"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="MELÓN"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/melonimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/melon"
+        android:src="@drawable/melon" />
+
+    <TextView
+        android:id="@+id/melonkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/melonimg"
+        android:layout_marginLeft="80dp"
+        android:text="$20kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/meloncant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/melonimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/melonch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/melonkg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+
+    <!--Naranja-->
+    <TextView
+        android:id="@+id/naranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mangoch"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/fresa"
+        android:text="NARANJA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/naranjaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/naranja"
+        android:layout_toRightOf="@id/fresaimg"
+        android:src="@drawable/naranja" />
+
+    <TextView
+        android:id="@+id/naranjakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/naranjaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$10kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <EditText
+        android:id="@+id/naranjacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/naranjaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fresaimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/naranjakg"
+        android:layout_toRightOf="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/naranjach"
+        />
+
+
+    <!--Pina-->
+    <TextView
+        android:id="@+id/pina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/melonch"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="PIÑA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/pinaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/pina"
+        android:src="@drawable/pina" />
+
+    <TextView
+        android:id="@+id/pinakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$15kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/pinacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/pinach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinakg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--Platano-->
+    <TextView
+        android:id="@+id/platano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/naranjach"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/fresa"
+        android:text="PLATANO"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/platanoimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/platano"
+        android:layout_toRightOf="@id/fresaimg"
+        android:src="@drawable/platano" />
+
+    <TextView
+        android:id="@+id/platanokg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/platanoimg"
+        android:layout_marginLeft="80dp"
+        android:text="$10kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <EditText
+        android:id="@+id/platanocant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/platanoimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fresaimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/platanokg"
+        android:layout_toRightOf="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/platanoch"
+        />
+
+    <!--Sandia-->
+    <TextView
+        android:id="@+id/sandia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinach"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="SANDÍA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/sandiaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/sandia"
+        android:src="@drawable/sandia" />
+
+    <TextView
+        android:id="@+id/sandiakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sandiaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$12kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/sandiacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sandiaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/sandiach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sandiakg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--Uvas-->
+    <TextView
+        android:id="@+id/uvas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/platanoch"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/fresa"
+        android:text="UVAS"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/uvasimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/uvas"
+        android:layout_toRightOf="@id/fresaimg"
+        android:src="@drawable/uvas" />
+
+    <TextView
+        android:id="@+id/uvaskg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uvasimg"
+        android:layout_marginLeft="80dp"
+        android:text="$20kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/fresaimg"/>
+
+    <EditText
+        android:id="@+id/uvascant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uvasimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fresaimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/uvaskg"
+        android:layout_toRightOf="@id/fresaimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/uvasch"
+        />
+
+
+    <TextView
+        android:id="@+id/titulo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:background="#A38BC34A"
+        android:text="Verduras"
+        android:textAlignment="center"
+        android:textColor="#3E3C3C"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/uvasch"/>
+
+    <TextView
+        android:id="@+id/extensosurtido2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Selecciona la cantidad y posteriormente da click para agregar al carrito!"
+        android:textAlignment="center"
+        android:textColor="#064C09"
+        android:textSize="20dp" />
+
+
+    <!--betabel-->
+    <TextView
+        android:id="@+id/betabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/extensosurtido2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="BETABEL"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/betabelimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/betabel"
+        android:src="@drawable/betabel" />
+
+    <TextView
+        android:id="@+id/betabelkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/betabelimg"
+        android:layout_marginLeft="80dp"
+        android:text="$40kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/betabelcant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/betabelkg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/betabelch"
+        />
+
+    <!-- BROCOLI -->
+    <TextView
+        android:id="@+id/brocoli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/extensosurtido2"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/betabel"
+        android:text="BROCOLI"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/brocoliimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/betabel"
+        android:src="@drawable/brocoli"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <TextView
+        android:id="@+id/brocolikg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brocoliimg"
+        android:layout_marginLeft="80dp"
+        android:text="$50kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <EditText
+        android:id="@+id/brocolicant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/betabelimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/betabelkg"
+        android:layout_toRightOf="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/brocolich"
+        />
+
+    <!-- Cebolla -->
+    <TextView
+        android:id="@+id/cebolla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/betabelch"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:text="CEBOLLA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/cebollaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/cebolla"
+        android:src="@drawable/cebolla" />
+
+    <TextView
+        android:id="@+id/cebollakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cebollaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$25kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/cebollacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cebollaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/cebollach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cebollakg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--chayote -->
+    <TextView
+        android:id="@+id/chayote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brocolich"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/betabel"
+        android:text="CHAYOTE"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/chayoteimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/chayote"
+        android:layout_toRightOf="@id/betabelimg"
+        android:src="@drawable/chayote" />
+
+    <TextView
+        android:id="@+id/chayotekg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chayoteimg"
+        android:layout_marginLeft="80dp"
+        android:text="$12kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <EditText
+        android:id="@+id/chayotecant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chayoteimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/betabelimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/chayotekg"
+        android:layout_toRightOf="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/chayotech"
+        />
+    <!--serrano-->
+    <TextView
+        android:id="@+id/chile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cebollach"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="CHILE"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/chileimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/chile"
+        android:src="@drawable/chileserrano" />
+
+    <TextView
+        android:id="@+id/chilekg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chileimg"
+        android:layout_marginLeft="80dp"
+        android:text="$20kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/chilecant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chileimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/chilech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chilekg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+
+    <!--Elote-->
+    <TextView
+        android:id="@+id/elote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chayotech"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/betabel"
+        android:text="ELOTE"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/eloteimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/elote"
+        android:layout_toRightOf="@id/betabelimg"
+        android:src="@drawable/elote" />
+
+    <TextView
+        android:id="@+id/elotekg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eloteimg"
+        android:layout_marginLeft="80dp"
+        android:text="$10kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <EditText
+        android:id="@+id/elotecant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eloteimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/betabelimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/elotekg"
+        android:layout_toRightOf="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/elotech"
+        />
+
+
+    <!--JITOMATE-->
+    <TextView
+        android:id="@+id/jitomate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chilech"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="JITOMATE"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/jitomateimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/jitomate"
+        android:src="@drawable/jitomate" />
+
+    <TextView
+        android:id="@+id/jitomatekg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jitomateimg"
+        android:layout_marginLeft="80dp"
+        android:text="$15kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/jitomatecant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jitomateimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/jitomatech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jitomatekg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--papa-->
+    <TextView
+        android:id="@+id/papa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/elotech"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/betabel"
+        android:text="PAPA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/papaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/papa"
+        android:layout_toRightOf="@id/betabelimg"
+        android:src="@drawable/papa" />
+
+    <TextView
+        android:id="@+id/papakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/papaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$10kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <EditText
+        android:id="@+id/papacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/papaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/betabelimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/papakg"
+        android:layout_toRightOf="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/papach"
+        />
+
+    <!--Pepino-->
+    <TextView
+        android:id="@+id/pepino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jitomatech"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="PEPINO"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/pepinoimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/pepino"
+        android:src="@drawable/pepino" />
+
+    <TextView
+        android:id="@+id/pepinokg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pepinoimg"
+        android:layout_marginLeft="80dp"
+        android:text="$12kg"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/pepinocant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pepinoimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <CheckBox
+        android:id="@+id/pepinoch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pepinokg"
+        android:layout_marginStart="20dp"
+        android:text="Agregar al carrito" />
+
+    <!--zanahoria-->
+    <TextView
+        android:id="@+id/zanahoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/papach"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/betabel"
+        android:text="ZANAHORIA"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/zanahoriaimg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/zanahoria"
+        android:layout_toRightOf="@id/betabelimg"
+        android:src="@drawable/zanahoria" />
+
+    <TextView
+        android:id="@+id/zanahoriakg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/zanahoriaimg"
+        android:layout_marginLeft="80dp"
+        android:text="$20kg"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/betabelimg"/>
+
+    <EditText
+        android:id="@+id/zanahoriacant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/zanahoriaimg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/betabelimg"
+        android:hint="Cantidad (default es 1)"
+        android:inputType="number"
+        android:textSize="15dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar al carrito"
+        android:layout_below="@id/zanahoriakg"
+        android:layout_toRightOf="@id/betabelimg"
+        android:layout_marginStart="20dp"
+        android:id="@+id/zanahoriach"
+        />
+</RelativeLayout>
+</ScrollView>
