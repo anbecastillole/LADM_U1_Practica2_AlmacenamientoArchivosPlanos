@@ -6,6 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.internal.ContextUtils.getActivity
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 
 class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
@@ -27,6 +31,10 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return titles.size
     }
+
+
+
+
     inner class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
         var itemTitle: TextView

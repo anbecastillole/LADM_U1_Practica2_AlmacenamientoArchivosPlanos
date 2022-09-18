@@ -77,14 +77,14 @@
         android:hint="Cantidad (default es 1)"
         android:inputType="number"
         android:textSize="15dp" />
+
     <CheckBox
+        android:id="@+id/fresach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar al carrito"
         android:layout_below="@id/fresakg"
         android:layout_marginStart="20dp"
-        android:id="@+id/fresach"
-        />
+        android:text="Agregar al carrito" />
 
     <!-- durazno -->
     <TextView
@@ -1054,6 +1054,35 @@
         android:layout_toRightOf="@id/betabelimg"
         android:layout_marginStart="20dp"
         android:id="@+id/zanahoriach"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar carrito"
+        android:id="@+id/btnguardar"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/zanahoriach"
+       />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver carrito"
+        android:id="@+id/btnleer"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/zanahoriach"
+        android:layout_toRightOf="@id/btnguardar"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reclyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnguardar"
+        android:layout_marginTop="20dp"
         />
 </RelativeLayout>
 </ScrollView>
