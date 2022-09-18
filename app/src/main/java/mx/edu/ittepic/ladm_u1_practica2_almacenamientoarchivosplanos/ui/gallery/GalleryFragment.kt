@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
+import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.FrutaAdapter
+import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.Frutas
 import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.R
 import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.databinding.FragmentGalleryBinding
 import java.io.BufferedReader
@@ -39,20 +41,24 @@ class GalleryFragment : Fragment() {
         val view: View =inflater.inflate(R.layout.fragment_gallery,container,false)
         var s= ""
         val botonguardar = view.findViewById<Button>(R.id.btnguardar)
-        val botonleer = view.findViewById<Button>(R.id.btnleer)
+       // val botonleer = view.findViewById<Button>(R.id.btnleer)
         val fresa = view.findViewById<CheckBox>(R.id.fresach)
         val zanahoria = view.findViewById<CheckBox>(R.id.zanahoriach)
+        val fresac =view.findViewById<EditText>(R.id.fresacant)
+        val zanac = view.findViewById<EditText>(R.id.zanahoriacant)
         //prueba custom adapter
+        var items: List<Frutas> = ArrayList()
+        val adapter = FrutaAdapter(items)
         val recyclerView = view.findViewById<RecyclerView>(R.id.reclyclerView)//
-        val adapter = CustomAdapterA()//
+        //val adapter = CustomAdapterA()//
         recyclerView.layoutManager= LinearLayoutManager(context)//
-        recyclerView.adapter=adapter//
+       //
         view.findViewById<RecyclerView>(R.id.reclyclerView).visibility = INVISIBLE //PROVISIONAL HASTA QUE EL CUSTOM TOME VALORES DE ARREGLOS
 
 
         botonguardar.setOnClickListener {
-            if (fresa.isChecked()){ s+="fresa "; }
-            if (zanahoria.isChecked()){ s+="zanahoria "; }
+            if (fresa.isChecked()){ s+=("fresa:"+fresac.text.toString()+":") }
+            if (zanahoria.isChecked()){ s+=("zanahoria:"+zanac.text.toString()+":") }
 
             var data = s;
             var mensaje = ""
@@ -66,11 +72,12 @@ class GalleryFragment : Fragment() {
                 .show()
             }
         }
-
+/*
         botonleer.setOnClickListener {
             view.findViewById<RecyclerView>(R.id.reclyclerView).visibility = VISIBLE
             //zana.setText("HOLA")
-            var contenido = abrirDesdeMemoriaInterna()
+            var contenido = ""
+            contenido=abrirDesdeMemoriaInterna()
 
 
             var msj = ""
@@ -78,17 +85,20 @@ class GalleryFragment : Fragment() {
 
                 msj = "ERROR, NO SE PUDO LEER"
             } else {
+
                 Log.wtf("myWTFTag",contenido)
+                if(contenido=="fresa"){Log.wtf("myWTFTag","adentro");items = listOf(Frutas(R.drawable.fresas,"Fresas","12".toInt()))}
                 msj = "SE  LEYÓ CORRECTAMENTE"
+                recyclerView.adapter=adapter
             }
             getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(msj).setPositiveButton("ok"){ d, i->d.dismiss()}
                 .show() }
             }
+*/
 
-
-
+/*
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View = binding.root*/
 /*
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {

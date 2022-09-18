@@ -1065,7 +1065,7 @@
         android:layout_marginStart="20dp"
         android:layout_below="@id/zanahoriach"
        />
-
+<!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -1076,7 +1076,7 @@
         android:layout_below="@id/zanahoriach"
         android:layout_toRightOf="@id/btnguardar"
         android:layout_centerHorizontal="true"/>
-
+-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reclyclerView"
         android:layout_width="match_parent"
