@@ -43,8 +43,63 @@ class GalleryFragment : Fragment() {
         val botonguardar = view.findViewById<Button>(R.id.btnguardar)
        // val botonleer = view.findViewById<Button>(R.id.btnleer)
         val fresa = view.findViewById<CheckBox>(R.id.fresach)
-        val zanahoria = view.findViewById<CheckBox>(R.id.zanahoriach)
         val fresac =view.findViewById<EditText>(R.id.fresacant)
+
+        val durazno=view.findViewById<CheckBox>(R.id.duraznoch)
+        val duraznoc =view.findViewById<EditText>(R.id.duraznocant)
+
+        val guayaba=view.findViewById<CheckBox>(R.id.guayabach)
+        val guayabac =view.findViewById<EditText>(R.id.guayabacant)
+
+        val mango=view.findViewById<CheckBox>(R.id.mangoch)
+        val mangoc =view.findViewById<EditText>(R.id.mangocant)
+
+        val melon=view.findViewById<CheckBox>(R.id.melonch)
+        val melonc =view.findViewById<EditText>(R.id.meloncant)
+
+        val naranja=view.findViewById<CheckBox>(R.id.naranjach)
+        val naranjac =view.findViewById<EditText>(R.id.naranjacant)
+
+        val pina=view.findViewById<CheckBox>(R.id.pinach)
+        val pinac =view.findViewById<EditText>(R.id.pinacant)
+
+        val platano=view.findViewById<CheckBox>(R.id.platanoch)
+        val platanoc =view.findViewById<EditText>(R.id.platanocant)
+
+        val sandia=view.findViewById<CheckBox>(R.id.sandiach)
+        val sandiac =view.findViewById<EditText>(R.id.sandiacant)
+
+        val uvas=view.findViewById<CheckBox>(R.id.uvasch)
+        val uvasc =view.findViewById<EditText>(R.id.uvascant)
+
+        val betabel=view.findViewById<CheckBox>(R.id.betabelch)
+        val betabelc =view.findViewById<EditText>(R.id.betabelcant)
+
+        val brocoli=view.findViewById<CheckBox>(R.id.brocolich)
+        val brocolic =view.findViewById<EditText>(R.id.brocolicant)
+
+        val cebolla=view.findViewById<CheckBox>(R.id.cebollach)
+        val cebollac =view.findViewById<EditText>(R.id.cebollacant)
+
+        val chayote=view.findViewById<CheckBox>(R.id.chayotech)
+        val chayotec =view.findViewById<EditText>(R.id.chayotecant)
+
+        val chile=view.findViewById<CheckBox>(R.id.chilech)
+        val chilec =view.findViewById<EditText>(R.id.chilecant)
+
+        val elote=view.findViewById<CheckBox>(R.id.elotech)
+        val elotec =view.findViewById<EditText>(R.id.elotecant)
+
+        val jitomate=view.findViewById<CheckBox>(R.id.jitomatech)
+        val jitomatec =view.findViewById<EditText>(R.id.jitomatecant)
+
+        val papa=view.findViewById<CheckBox>(R.id.papach)
+        val papac =view.findViewById<EditText>(R.id.papacant)
+
+        val pepino=view.findViewById<CheckBox>(R.id.pepinoch)
+        val pepinoc =view.findViewById<EditText>(R.id.pepinocant)
+
+        val zanahoria = view.findViewById<CheckBox>(R.id.zanahoriach)
         val zanac = view.findViewById<EditText>(R.id.zanahoriacant)
         //prueba custom adapter
         var items: List<Frutas> = ArrayList()
@@ -58,8 +113,25 @@ class GalleryFragment : Fragment() {
 
         botonguardar.setOnClickListener {
             if (fresa.isChecked()){ s+=("fresa:"+fresac.text.toString()+":") }
+            if (durazno.isChecked()){ s+=("durazno:"+duraznoc.text.toString()+":") }
+            if (guayaba.isChecked()){ s+=("guayaba:"+guayabac.text.toString()+":") }
+            if (mango.isChecked()){ s+=("mango:"+mangoc.text.toString()+":") }
+            if (melon.isChecked()){ s+=("melon:"+melonc.text.toString()+":") }
+            if (naranja.isChecked()){ s+=("naranja:"+naranjac.text.toString()+":") }
+            if (pina.isChecked()){ s+=("pina:"+pinac.text.toString()+":") }
+            if (platano.isChecked()){ s+=("platano:"+platanoc.text.toString()+":") }
+            if (sandia.isChecked()){ s+=("sandia:"+sandiac.text.toString()+":") }
+            if (uvas.isChecked()){ s+=("uvas:"+uvasc.text.toString()+":") }
+            if (betabel.isChecked()){ s+=("betabel:"+betabelc.text.toString()+":") }
+            if (brocoli.isChecked()){ s+=("brocoli:"+brocolic.text.toString()+":") }
+            if (cebolla.isChecked()){ s+=("cebolla:"+cebollac.text.toString()+":") }
+            if (chayote.isChecked()){ s+=("chayote:"+chayotec.text.toString()+":") }
+            if (chile.isChecked()){ s+=("chile:"+chilec.text.toString()+":") }
+            if (elote.isChecked()){ s+=("elote:"+elotec.text.toString()+":") }
+            if (jitomate.isChecked()){ s+=("jitomate:"+jitomatec.text.toString()+":") }
+            if (papa.isChecked()){ s+=("papa:"+papac.text.toString()+":") }
+            if (pepino.isChecked()){ s+=("pepino:"+pepinoc.text.toString()+":") }
             if (zanahoria.isChecked()){ s+=("zanahoria:"+zanac.text.toString()+":") }
-
             var data = s;
             var mensaje = ""
             if (guardarEnMemoriaInterna(data)== true) {

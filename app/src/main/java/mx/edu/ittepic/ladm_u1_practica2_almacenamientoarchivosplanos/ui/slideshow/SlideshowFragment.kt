@@ -24,6 +24,7 @@ class SlideshowFragment : Fragment() {
 
     private var _binding: FragmentSlideshowBinding? = null
 
+    var items = mutableListOf(Frutas(R.drawable.fresas,"Fresas",1))
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -44,9 +45,10 @@ class SlideshowFragment : Fragment() {
 
 
         btn.setOnClickListener {
-            var items: List<Frutas>
-            items = mutableListOf(Frutas(R.drawable.pepino,"contenido","20".toInt()))
-            println("inicio "+items.toString()+items.size)
+
+
+            //items = mutableListOf(Frutas(R.drawable.pepino,"pepino","20".toInt()))
+         //   println("inicio "+items.toString()+items.size)
             //
 
             //
@@ -63,7 +65,7 @@ class SlideshowFragment : Fragment() {
 
                 //SPLIT
                 val words = contenido.split(':')
-                val chunks = words.chunked(2) //junta de a 2 = [fruta, csntidad]
+                val chunks = words.chunked(2) //junta de a 2 = [fruta, cantidad]
 
                 println(chunks)
                 //POR HACER:
@@ -72,16 +74,108 @@ class SlideshowFragment : Fragment() {
                 // y la imagen que le corresponda
                 println(chunks[0][1]) //cantidad
 
+//                for(i in 0..chunks.size){
+//                    if(chunks[i][0].equals("fresa")){
+//                        items = mutableListOf(Frutas(R.drawable.fresas,"Fresas",chunks[i][1].toInt()));
+//                     //   items.add(Frutas(R.drawable.fresas, "Fresas", chunks[0][1].toInt()))
+//                    }
+//                }
 
-                if(contenido.equals("fresa:1:zanahoria:1:")){
-                    println("chi");items = mutableListOf(Frutas(R.drawable.fresas,"Fresas","12".toInt()));
+                for (item in chunks) {
 
-                    items.add(Frutas(R.drawable.fresas, "Prueba", 230))
-                    items.add(Frutas(R.drawable.zanahoria, "otraprueba", 456))
+                    if (item[0]=="fresa"){
+                        //items = mutableListOf(Frutas(R.drawable.fresas,"Fresas",item[1].toInt()))
+                          items.add(Frutas(R.drawable.fresas, "Fresas", chunks[0][1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="durazno"){
+                       // items = mutableListOf(Frutas(R.drawable.durazno,"Duraznos",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.durazno,"Duraznos",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="guayaba"){
+                      //  items = mutableListOf(Frutas(R.drawable.guayabas,"Guayabas",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.guayabas,"Guayabas",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="mango"){
+                        //items = mutableListOf(Frutas(R.drawable.mango,"Mangos",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.mango,"Mangos",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="melon"){
+                       // items = mutableListOf(Frutas(R.drawable.melon,"Melon",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.melon,"Melon",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="naranja"){
+                       // items = mutableListOf(Frutas(R.drawable.naranja,"Naranjas",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.naranja,"Naranjas",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="pina"){
+                      //  items = mutableListOf(Frutas(R.drawable.pina,"Piña",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.pina,"Piña",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="platano"){
+                      //  items = mutableListOf(Frutas(R.drawable.platano,"Platanos",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.platano,"Platanos",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="sandia"){
+                       // items = mutableListOf(Frutas(R.drawable.sandia,"Sandia",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.sandia,"Sandia",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="uvas"){
+                       // items = mutableListOf(Frutas(R.drawable.uvas,"Uvas",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.uvas,"Uvas",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="betabel"){
+                      //  items = mutableListOf(Frutas(R.drawable.betabel,"Betabel",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.betabel,"Betabel",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="cebolla"){
+                      //  items = mutableListOf(Frutas(R.drawable.cebolla,"Cebolla",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.cebolla,"Cebolla",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="chayote"){
+                       // items = mutableListOf(Frutas(R.drawable.chayote,"Chayote",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.chayote,"Chayote",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="chile"){
+                      //  items = mutableListOf(Frutas(R.drawable.chileserrano,"Chile",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.chileserrano,"Chile",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="elote"){
+                        //items = mutableListOf(Frutas(R.drawable.elote,"Elote",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.elote,"Elote",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="jitomate"){
+                       // items = mutableListOf(Frutas(R.drawable.jitomate,"Jitomates",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.jitomate,"Jitomates",item[1].toInt())) ;//println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="papa"){
+                       // items = mutableListOf(Frutas(R.drawable.papa,"Papas",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.papa,"Papas",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="pepino"){
+                    //    items = mutableListOf(Frutas(R.drawable.pepino,"Pepino",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.pepino,"Pepino",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="zanahoria"){
+                     //   items = mutableListOf(Frutas(R.drawable.zanahoria,"Zanahorias",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.zanahoria,"Zanahorias",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]=="brocoli"){
+                     //   items = mutableListOf(Frutas(R.drawable.brocoli,"Brocoli",item[1].toInt()))
+                        (items as MutableList<Frutas>).add(Frutas(R.drawable.brocoli,"Brocoli",item[1].toInt())); //println("fruta" + item[0] + "cantidad" + item[1])
+                    }
+                    if (item[0]==""){continue}
                 }
 
-                mensaje = "SE  LEYÓ CORRECTAMENTE"
-                println("hey "+items.toString()+items.size)
+
+//                if(contenido.equals("fresa:1:zanahoria:1:")){
+//                    println("chi");items = mutableListOf(Frutas(R.drawable.fresas,"Fresas","12".toInt()));
+//
+//                    items.add(Frutas(R.drawable.fresas, "Prueba", 230))
+//                    items.add(Frutas(R.drawable.zanahoria, "otraprueba", 456))
+//                }
+
+//                mensaje = "SE  LEYÓ CORRECTAMENTE"
+//                println("hey "+items.toString()+items.size)
             }
 
             getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(mensaje).setPositiveButton("ok"){ d, i->d.dismiss()}
