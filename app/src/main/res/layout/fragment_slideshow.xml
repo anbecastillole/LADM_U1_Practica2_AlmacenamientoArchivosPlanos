@@ -18,6 +18,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginEnd="10dp"
             android:background="#A38BC34A"
             android:text="Carrito de compras"
@@ -25,27 +26,41 @@
             android:textColor="#3E3C3C"
             android:textSize="30dp"
             android:textStyle="bold"
-           />
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reclyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/titulo1"
+            android:layout_below="@id/btneliminar"
             android:layout_marginTop="20dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mostrar carrito"
+            android:layout_marginLeft="20dp"
             android:id="@+id/btnver"
-            android:layout_below="@id/reclyclerView"/>
-        <Button
-            android:layout_width="178dp"
-            android:layout_height="wrap_content"
-            android:text="Editar pedido "
-            android:id="@+id/btnEditar"
-            android:layout_below="@id/btnver"/>
+            android:layout_below="@id/titulo1"/>
 
+        <Button
+            android:id="@+id/btneliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnver"
+            android:layout_marginLeft="20dp"
+            android:text="Eliminar carrito"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnver"
+            android:layout_toRightOf="@id/btneliminar"
+            android:paddingRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Editar carrito"
+            android:visibility="invisible"/>
 </RelativeLayout>
 </ScrollView>

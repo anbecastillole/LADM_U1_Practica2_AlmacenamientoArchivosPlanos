@@ -113,29 +113,34 @@ class GalleryFragment : Fragment() {
 
 
         botonguardar.setOnClickListener {
-
+            fun  checar(campo: String): String {
+                var valor = ""
+                if(campo.equals("")){valor="1"}
+                else{valor=campo}
+                return valor
+            }
             contador=0
             var s= ""
-            if (fresa.isChecked()){ s+=("fresa:"+fresac.text.toString()+":");contador++}
-            if (durazno.isChecked()){ s+=("durazno:"+duraznoc.text.toString()+":");contador++}
-            if (guayaba.isChecked()){ s+=("guayaba:"+guayabac.text.toString()+":");contador++}
-            if (mango.isChecked()){ s+=("mango:"+mangoc.text.toString()+":");contador++}
-            if (melon.isChecked()){ s+=("melon:"+melonc.text.toString()+":");contador++}
-            if (naranja.isChecked()){ s+=("naranja:"+naranjac.text.toString()+":");contador++}
-            if (pina.isChecked()){ s+=("pina:"+pinac.text.toString()+":");contador++}
-            if (platano.isChecked()){ s+=("platano:"+platanoc.text.toString()+":");contador++}
-            if (sandia.isChecked()){ s+=("sandia:"+sandiac.text.toString()+":");contador++}
-            if (uvas.isChecked()){ s+=("uvas:"+uvasc.text.toString()+":");contador++}
-            if (betabel.isChecked()){ s+=("betabel:"+betabelc.text.toString()+":");contador++}
-            if (brocoli.isChecked()){ s+=("brocoli:"+brocolic.text.toString()+":");contador++}
-            if (cebolla.isChecked()){ s+=("cebolla:"+cebollac.text.toString()+":");contador++}
-            if (chayote.isChecked()){ s+=("chayote:"+chayotec.text.toString()+":");contador++}
-            if (chile.isChecked()){ s+=("chile:"+chilec.text.toString()+":");contador++}
-            if (elote.isChecked()){ s+=("elote:"+elotec.text.toString()+":");contador++}
-            if (jitomate.isChecked()){ s+=("jitomate:"+jitomatec.text.toString()+":");contador++}
-            if (papa.isChecked()){ s+=("papa:"+papac.text.toString()+":");contador++}
-            if (pepino.isChecked()){ s+=("pepino:"+pepinoc.text.toString()+":");contador++}
-            if (zanahoria.isChecked()){ s+=("zanahoria:"+zanac.text.toString()+":");contador++}
+            if (fresa.isChecked()){ s+=("fresa:"+checar(fresac.text.toString())+":");contador++}
+            if (durazno.isChecked()){ s+=("durazno:"+checar(duraznoc.text.toString())+":");contador++}
+            if (guayaba.isChecked()){ s+=("guayaba:"+checar(guayabac.text.toString())+":");contador++}
+            if (mango.isChecked()){ s+=("mango:"+checar(mangoc.text.toString())+":");contador++}
+            if (melon.isChecked()){ s+=("melon:"+checar(melonc.text.toString())+":");contador++}
+            if (naranja.isChecked()){ s+=("naranja:"+checar(naranjac.text.toString())+":");contador++}
+            if (pina.isChecked()){ s+=("pina:"+checar(pinac.text.toString())+":");contador++}
+            if (platano.isChecked()){ s+=("platano:"+checar(platanoc.text.toString())+":");contador++}
+            if (sandia.isChecked()){ s+=("sandia:"+checar(sandiac.text.toString())+":");contador++}
+            if (uvas.isChecked()){ s+=("uvas:"+checar(uvasc.text.toString())+":");contador++}
+            if (betabel.isChecked()){ s+=("betabel:"+checar(betabelc.text.toString())+":");contador++}
+            if (brocoli.isChecked()){ s+=("brocoli:"+checar(brocolic.text.toString())+":");contador++}
+            if (cebolla.isChecked()){ s+=("cebolla:"+checar(cebollac.text.toString())+":");contador++}
+            if (chayote.isChecked()){ s+=("chayote:"+checar(chayotec.text.toString())+":");contador++}
+            if (chile.isChecked()){ s+=("chile:"+checar(chilec.text.toString())+":");contador++}
+            if (elote.isChecked()){ s+=("elote:"+checar(elotec.text.toString())+":");contador++}
+            if (jitomate.isChecked()){ s+=("jitomate:"+checar(jitomatec.text.toString())+":");contador++}
+            if (papa.isChecked()){ s+=("papa:"+checar(papac.text.toString())+":");contador++}
+            if (pepino.isChecked()){ s+=("pepino:"+checar(pepinoc.text.toString())+":");contador++}
+            if (zanahoria.isChecked()){ s+=("zanahoria:"+checar(zanac.text.toString())+":");contador++}
 
             if (contador<=9) {
                 getActivity()?.let { it1 ->

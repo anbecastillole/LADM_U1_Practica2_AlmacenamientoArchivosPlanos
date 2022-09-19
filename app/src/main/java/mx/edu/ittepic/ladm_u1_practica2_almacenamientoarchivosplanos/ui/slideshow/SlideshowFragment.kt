@@ -2,9 +2,12 @@ package mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.ui.slidesh
 
 
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
@@ -21,6 +24,7 @@ import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.ui.gallery.
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 
 
 class SlideshowFragment : Fragment() {
@@ -46,6 +50,7 @@ class SlideshowFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.reclyclerView)//
         val btnVer = view.findViewById<Button>(R.id.btnver)
         val btnEditar=view.findViewById<Button>(R.id.btnEditar)
+        val btnEliminar=view.findViewById<Button>(R.id.btneliminar)
         //val texto = view.findViewById<TextView>(R.id.titulo1)
         //AQUI
 
@@ -70,21 +75,30 @@ class SlideshowFragment : Fragment() {
             //Ocultar botones y etiquetas
             btnVer.setVisibility(View.GONE);
             btnEditar.setVisibility(View.GONE);
+            btnEliminar.setVisibility(View.GONE);
             recyclerView.setVisibility(View.GONE);
             titulo1.setVisibility(View.GONE);
 
         }
         btnVer.setOnClickListener {
-
-            var contenido = abrirDesdeMemoriaInterna()
-            var mensaje = ""
-            if (contenido.isEmpty()==true) {
-
+            btnVer.visibility=(INVISIBLE)
+            btneliminar.visibility=(VISIBLE)
+            btnEditar.visibility=(VISIBLE)
+            var mensaje=""
+            var contenido=""
+            //try{
+            contenido = abrirDesdeMemoriaInterna()/*}catch(io: NullPointerException){
                 mensaje = "ERROR, NO SE PUDO LEER"
-            } else {
-                //texto.setText(contenido)
-                //println(contenido)
+            }*/
+            print("contenido-"+contenido+"-")
+            if (contenido.equals("")) {
 
+                mensaje = "ERROR, asegurate de guardar artículos en carrito"
+                btneliminar.visibility=(INVISIBLE)
+                btnEditar.visibility=(INVISIBLE)
+            } else {
+                println(contenido)
+                mensaje="¡Gracias por elegirnos!"
                 //SPLIT
                 val words = contenido.split(':')
                 val chunks = words.chunked(2) //junta de a 2 = [fruta, cantidad]
@@ -211,24 +225,49 @@ class SlideshowFragment : Fragment() {
             recyclerView.layoutManager= LinearLayoutManager(context)//
             recyclerView.adapter=adapter
         }
+        btnEliminar.setOnClickListener {
+            var data = ""
+            var mensaje = ""
+            if (guardarEnMemoriaInterna(data)== true) {
+                mensaje = "ELIMINADO"
+                view.findViewById<RecyclerView>(R.id.reclyclerView).visibility= INVISIBLE
+            } else {
+                mensaje = "ERROR AL ELIMINAR"
+            }
 
+            getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(mensaje).setPositiveButton("ok"){d,i->d.dismiss()}
+                .show()
+            }
+        }
         return view
     }
 
 
     private fun abrirDesdeMemoriaInterna(): String {
         var data=""
+
         try {
-
             var flujoEntrada = BufferedReader(InputStreamReader(getActivity()?.openFileInput("archivo.txt")))
-            data= flujoEntrada.readLine()
+            try{
+                data= flujoEntrada.readLine()}catch(io:NullPointerException){return ""}
             flujoEntrada.close()
-
 
         }catch(io: IOException){
             return ""
         }
         return data
+    }
+
+    private fun guardarEnMemoriaInterna(data:String): Boolean {
+        try {
+            var flujoSalida = OutputStreamWriter(getActivity()?.openFileOutput("archivo.txt", Context.MODE_PRIVATE))
+            flujoSalida.write(data)
+            flujoSalida.flush()
+            flujoSalida.close()
+        }catch(io: IOException){
+            return false
+        }
+        return true
     }
     override fun onDestroyView() {
         super.onDestroyView()
