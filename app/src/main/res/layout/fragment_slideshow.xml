@@ -8,6 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/relativelayout"
     tools:context=".ui.slideshow.SlideshowFragment">
 
 
@@ -39,7 +40,12 @@
             android:text="Mostrar carrito"
             android:id="@+id/btnver"
             android:layout_below="@id/reclyclerView"/>
-
+        <Button
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:text="Editar pedido "
+            android:id="@+id/btnEditar"
+            android:layout_below="@id/btnver"/>
 
 </RelativeLayout>
 </ScrollView>

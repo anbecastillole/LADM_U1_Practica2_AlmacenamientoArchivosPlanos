@@ -28,6 +28,7 @@ import java.io.OutputStreamWriter
 class GalleryFragment : Fragment() {
 
     private var _binding: FragmentGalleryBinding? = null
+    var contador:Int = 0
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -112,31 +113,47 @@ class GalleryFragment : Fragment() {
 
 
         botonguardar.setOnClickListener {
-            if (fresa.isChecked()){ s+=("fresa:"+fresac.text.toString()+":") }
-            if (durazno.isChecked()){ s+=("durazno:"+duraznoc.text.toString()+":") }
-            if (guayaba.isChecked()){ s+=("guayaba:"+guayabac.text.toString()+":") }
-            if (mango.isChecked()){ s+=("mango:"+mangoc.text.toString()+":") }
-            if (melon.isChecked()){ s+=("melon:"+melonc.text.toString()+":") }
-            if (naranja.isChecked()){ s+=("naranja:"+naranjac.text.toString()+":") }
-            if (pina.isChecked()){ s+=("pina:"+pinac.text.toString()+":") }
-            if (platano.isChecked()){ s+=("platano:"+platanoc.text.toString()+":") }
-            if (sandia.isChecked()){ s+=("sandia:"+sandiac.text.toString()+":") }
-            if (uvas.isChecked()){ s+=("uvas:"+uvasc.text.toString()+":") }
-            if (betabel.isChecked()){ s+=("betabel:"+betabelc.text.toString()+":") }
-            if (brocoli.isChecked()){ s+=("brocoli:"+brocolic.text.toString()+":") }
-            if (cebolla.isChecked()){ s+=("cebolla:"+cebollac.text.toString()+":") }
-            if (chayote.isChecked()){ s+=("chayote:"+chayotec.text.toString()+":") }
-            if (chile.isChecked()){ s+=("chile:"+chilec.text.toString()+":") }
-            if (elote.isChecked()){ s+=("elote:"+elotec.text.toString()+":") }
-            if (jitomate.isChecked()){ s+=("jitomate:"+jitomatec.text.toString()+":") }
-            if (papa.isChecked()){ s+=("papa:"+papac.text.toString()+":") }
-            if (pepino.isChecked()){ s+=("pepino:"+pepinoc.text.toString()+":") }
-            if (zanahoria.isChecked()){ s+=("zanahoria:"+zanac.text.toString()+":") }
+
+            contador=0
+            var s= ""
+            if (fresa.isChecked()){ s+=("fresa:"+fresac.text.toString()+":");contador++}
+            if (durazno.isChecked()){ s+=("durazno:"+duraznoc.text.toString()+":");contador++}
+            if (guayaba.isChecked()){ s+=("guayaba:"+guayabac.text.toString()+":");contador++}
+            if (mango.isChecked()){ s+=("mango:"+mangoc.text.toString()+":");contador++}
+            if (melon.isChecked()){ s+=("melon:"+melonc.text.toString()+":");contador++}
+            if (naranja.isChecked()){ s+=("naranja:"+naranjac.text.toString()+":");contador++}
+            if (pina.isChecked()){ s+=("pina:"+pinac.text.toString()+":");contador++}
+            if (platano.isChecked()){ s+=("platano:"+platanoc.text.toString()+":");contador++}
+            if (sandia.isChecked()){ s+=("sandia:"+sandiac.text.toString()+":");contador++}
+            if (uvas.isChecked()){ s+=("uvas:"+uvasc.text.toString()+":");contador++}
+            if (betabel.isChecked()){ s+=("betabel:"+betabelc.text.toString()+":");contador++}
+            if (brocoli.isChecked()){ s+=("brocoli:"+brocolic.text.toString()+":");contador++}
+            if (cebolla.isChecked()){ s+=("cebolla:"+cebollac.text.toString()+":");contador++}
+            if (chayote.isChecked()){ s+=("chayote:"+chayotec.text.toString()+":");contador++}
+            if (chile.isChecked()){ s+=("chile:"+chilec.text.toString()+":");contador++}
+            if (elote.isChecked()){ s+=("elote:"+elotec.text.toString()+":");contador++}
+            if (jitomate.isChecked()){ s+=("jitomate:"+jitomatec.text.toString()+":");contador++}
+            if (papa.isChecked()){ s+=("papa:"+papac.text.toString()+":");contador++}
+            if (pepino.isChecked()){ s+=("pepino:"+pepinoc.text.toString()+":");contador++}
+            if (zanahoria.isChecked()){ s+=("zanahoria:"+zanac.text.toString()+":");contador++}
+
+            if (contador<=9) {
+                getActivity()?.let { it1 ->
+                    AlertDialog.Builder(it1).setTitle("Venta al mayoreo")
+                        .setMessage("Debe elegir mas de 10 productos minimo")
+                        .setPositiveButton("ok") { d, i -> d.cancel() }
+                        .show()
+                }
+
+                return@setOnClickListener
+            }
             var data = s;
             var mensaje = ""
             if (guardarEnMemoriaInterna(data)== true) {
                 mensaje = "SE GUARDO CON EXITO"
+
             } else {
+
                 mensaje = "ERROR AL GUARDAR"
             }
 
@@ -191,18 +208,18 @@ class GalleryFragment : Fragment() {
         return true
     }
 
-    private fun abrirDesdeMemoriaInterna(): String {
-        var data=""
-        try {
-
-            var flujoEntrada = BufferedReader(InputStreamReader(getActivity()?.openFileInput("archivo.txt")))
-            data= flujoEntrada.readLine()
-            flujoEntrada.close()
-        }catch(io: IOException){
-            return ""
-        }
-        return data
-    }
+//    private fun abrirDesdeMemoriaInterna(): String {
+//        var data=""
+//        try {
+//
+//            var flujoEntrada = BufferedReader(InputStreamReader(getActivity()?.openFileInput("archivo.txt")))
+//            data= flujoEntrada.readLine()
+//            flujoEntrada.close()
+//        }catch(io: IOException){
+//            return ""
+//        }
+//        return data
+//    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Ver carrito", Snackbar.LENGTH_LONG)
-                .setAction("Sí", null).show()
-        }
+//        binding.appBarMain.fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Ver carrito", Snackbar.LENGTH_LONG)
+//                .setAction("Sí", null).show()
+//        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
