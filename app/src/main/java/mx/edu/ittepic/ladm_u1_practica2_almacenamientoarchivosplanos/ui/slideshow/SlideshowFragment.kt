@@ -24,7 +24,7 @@ class SlideshowFragment : Fragment() {
 
     private var _binding: FragmentSlideshowBinding? = null
 
-    var items = mutableListOf(Frutas(R.drawable.fresas,"Fresas",1))
+    var items = mutableListOf(Frutas(R.drawable.ic_baseline_shopping_basket_24,"NOMBRE FRUTA/VERDURA",0))
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!

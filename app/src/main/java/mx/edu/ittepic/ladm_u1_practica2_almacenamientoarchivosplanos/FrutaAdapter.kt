@@ -23,7 +23,7 @@ class FrutaAdapter(items: List<Frutas>): RecyclerView.Adapter<FrutaAdapter.ViewH
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         viewHolder.itemTitle.text=items[i].nombre
-        viewHolder.itemDetail.text=items[i].visitas.toString()
+        viewHolder.itemDetail.text=items[i].cantidad.toString()
         viewHolder.itemImage.setImageResource(items[i].imagen)
     }
     init { //ESTO

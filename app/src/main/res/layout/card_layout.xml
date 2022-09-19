@@ -41,10 +41,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Detalles"
-            android:textColor="@color/black"
             android:id="@+id/item_detal"
+            android:layout_toRightOf="@id/cantidad"
+            android:layout_below="@id/item_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad(kg):  "
+            android:textColor="@color/black"
+            android:id="@+id/cantidad"
             android:textStyle="bold"
-            android:layout_toEndOf="@id/item_image"
             android:layout_toRightOf="@id/item_image"
             android:layout_below="@id/item_title"/>
     </RelativeLayout>
