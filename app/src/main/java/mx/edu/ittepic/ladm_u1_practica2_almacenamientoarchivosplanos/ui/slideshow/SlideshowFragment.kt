@@ -168,6 +168,7 @@ class SlideshowFragment : Fragment() {
                 .show()
             }
         }
+
         return view
     }
 
