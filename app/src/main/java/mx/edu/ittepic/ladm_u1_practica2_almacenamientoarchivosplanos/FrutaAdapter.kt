@@ -11,11 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 class FrutaAdapter(items: List<Frutas>): RecyclerView.Adapter<FrutaAdapter.ViewHolder>() {
     private val items: List<Frutas>
 
-
-    val titles = arrayOf("sí jala este","Soy","Ana","Castillo","Leal")
-    val details = arrayOf("Mannzana","Fresa","Naranja","Frutas","Verde")
-    val images = intArrayOf(R.drawable.betabel,R.drawable.brocoli,R.drawable.chayote,R.drawable.zanahoria,R.drawable.elote)
-
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v= LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout,viewGroup, false)
         return ViewHolder(v)
@@ -26,7 +21,7 @@ class FrutaAdapter(items: List<Frutas>): RecyclerView.Adapter<FrutaAdapter.ViewH
         viewHolder.itemDetail.text=items[i].cantidad.toString()
         viewHolder.itemImage.setImageResource(items[i].imagen)
     }
-    init { //ESTO
+    init {
         this.items = items
     }
 

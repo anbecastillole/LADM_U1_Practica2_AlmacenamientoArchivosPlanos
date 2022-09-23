@@ -102,15 +102,10 @@ class GalleryFragment : Fragment() {
 
         val zanahoria = view.findViewById<CheckBox>(R.id.zanahoriach)
         val zanac = view.findViewById<EditText>(R.id.zanahoriacant)
-        //prueba custom adapter
-        var items: List<Frutas> = ArrayList()
-        val adapter = FrutaAdapter(items)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.reclyclerView)//
-        //val adapter = CustomAdapterA()//
-        recyclerView.layoutManager= LinearLayoutManager(context)//
-       //
-        view.findViewById<RecyclerView>(R.id.reclyclerView).visibility = INVISIBLE //PROVISIONAL HASTA QUE EL CUSTOM TOME VALORES DE ARREGLOS
 
+        val recyclerView = view.findViewById<RecyclerView>(R.id.reclyclerView)
+
+        recyclerView.layoutManager= LinearLayoutManager(context)//
 
         botonguardar.setOnClickListener {
             fun  checar(campo: String): String {
@@ -166,38 +161,6 @@ class GalleryFragment : Fragment() {
                 .show()
             }
         }
-/*
-        botonleer.setOnClickListener {
-            view.findViewById<RecyclerView>(R.id.reclyclerView).visibility = VISIBLE
-            //zana.setText("HOLA")
-            var contenido = ""
-            contenido=abrirDesdeMemoriaInterna()
-
-
-            var msj = ""
-            if (contenido.isEmpty()==true) {
-
-                msj = "ERROR, NO SE PUDO LEER"
-            } else {
-
-                Log.wtf("myWTFTag",contenido)
-                if(contenido=="fresa"){Log.wtf("myWTFTag","adentro");items = listOf(Frutas(R.drawable.fresas,"Fresas","12".toInt()))}
-                msj = "SE  LEYÓ CORRECTAMENTE"
-                recyclerView.adapter=adapter
-            }
-            getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(msj).setPositiveButton("ok"){ d, i->d.dismiss()}
-                .show() }
-            }
-*/
-
-/*
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
-        val root: View = binding.root*/
-/*
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
         return view
     }
 
@@ -213,58 +176,9 @@ class GalleryFragment : Fragment() {
         return true
     }
 
-//    private fun abrirDesdeMemoriaInterna(): String {
-//        var data=""
-//        try {
-//
-//            var flujoEntrada = BufferedReader(InputStreamReader(getActivity()?.openFileInput("archivo.txt")))
-//            data= flujoEntrada.readLine()
-//            flujoEntrada.close()
-//        }catch(io: IOException){
-//            return ""
-//        }
-//        return data
-//    }
+    
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-}
-
-
-class CustomAdapterA: RecyclerView.Adapter<CustomAdapterA.ViewHolder>() {
-
-    val titles = arrayOf("sí jala este","Soy","Ana","Castillo","Leal")
-    val details = arrayOf("Mannzana","Fresa","Naranja","Frutas","Verde")
-    val images = intArrayOf(R.drawable.betabel,R.drawable.brocoli,R.drawable.chayote,R.drawable.zanahoria,R.drawable.elote)
-
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        val v= LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout,viewGroup, false)
-        return ViewHolder(v)
-    }
-
-    override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.itemTitle.text=titles[i]
-        viewHolder.itemDetail.text=details[i]
-        viewHolder.itemImage.setImageResource(images[i])
-    }
-
-    override fun getItemCount(): Int {
-        return titles.size
-    }
-
-
-
-
-    inner class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        var itemImage: ImageView
-        var itemTitle: TextView
-        var itemDetail: TextView
-
-        init {
-            itemImage = itemView.findViewById(R.id.item_image)
-            itemTitle = itemView.findViewById(R.id.item_title)
-            itemDetail= itemView.findViewById(R.id.item_detal)
-        }
     }
 }
