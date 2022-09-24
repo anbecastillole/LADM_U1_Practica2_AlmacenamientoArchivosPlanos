@@ -10,6 +10,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mostrar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="Mostrar catálogo para editar carrito"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
@@ -22,7 +32,8 @@
         android:background="#A38BC34A"
         android:textColor="#3E3C3C"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@id/mostrar"/>
 
     <TextView
         android:id="@+id/extensosurtido"

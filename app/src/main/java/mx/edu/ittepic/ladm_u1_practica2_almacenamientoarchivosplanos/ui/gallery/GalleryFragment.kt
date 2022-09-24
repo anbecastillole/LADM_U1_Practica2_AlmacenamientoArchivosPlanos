@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
+import kotlinx.android.synthetic.main.fragment_slideshow.*
 import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.FrutaAdapter
 import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.Frutas
 import mx.edu.ittepic.ladm_u1_practica2_almacenamientoarchivosplanos.R
@@ -29,6 +30,7 @@ class GalleryFragment : Fragment() {
 
     private var _binding: FragmentGalleryBinding? = null
     var contador:Int = 0
+    var entra = false
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -39,9 +41,11 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val view: View =inflater.inflate(R.layout.fragment_gallery,container,false)
         var s= ""
         val botonguardar = view.findViewById<Button>(R.id.btnguardar)
+        val botonmostrar = view.findViewById<Button>(R.id.mostrar)
        // val botonleer = view.findViewById<Button>(R.id.btnleer)
         val fresa = view.findViewById<CheckBox>(R.id.fresach)
         val fresac =view.findViewById<EditText>(R.id.fresacant)
@@ -106,8 +110,9 @@ class GalleryFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.reclyclerView)
 
         recyclerView.layoutManager= LinearLayoutManager(context)//
-
+        //botonmostrar.visibility=(INVISIBLE)
         botonguardar.setOnClickListener {
+         //   botonmostrar.visibility=(VISIBLE)
             fun  checar(campo: String): String {
                 var valor = ""
                 if(campo.equals("")){valor="1"}
@@ -160,6 +165,111 @@ class GalleryFragment : Fragment() {
             getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(mensaje).setPositiveButton("ok"){d,i->d.dismiss()}
                 .show()
             }
+            entra = true
+
+        }
+        botonmostrar.setOnClickListener(){
+            var contenido=""
+            var mensaje=""
+            contenido = abrirDesdeMemoriaInterna()
+            if (contenido.equals("")) {
+                mensaje ="ERROR, asegurate de tener guardados artículos en carrito antes de editar"
+
+            } else {
+                println(contenido)
+            mensaje="¡Gracias por elegirnos! Este es tu carrito:"
+            //SPLIT
+            val words = contenido.split(':')
+            val chunks = words.chunked(2) //junta de a 2 = [fruta, cantidad]
+            for (item in chunks) {
+
+                if (item[0]=="fresa"){
+                    fresa.isChecked = true
+                    fresac.setText(item[1].toString())
+                }
+                if (item[0]=="durazno"){
+                    durazno.isChecked = true
+                    duraznoc.setText(item[1].toString())
+                }
+                if (item[0]=="guayaba"){
+                    guayaba.isChecked = true
+                    guayabac.setText(item[1].toString())
+                }
+                if (item[0]=="mango"){
+                    mango.isChecked = true
+                    mangoc.setText(item[1].toString())
+                }
+                if (item[0]=="melon"){
+                    melon.isChecked = true
+                    melonc.setText(item[1].toString())
+                }
+                if (item[0]=="naranja"){
+                    naranja.isChecked = true
+                    naranjac.setText(item[1].toString())
+                }
+                if (item[0]=="pina"){
+                    pina.isChecked = true
+                    pinac.setText(item[1].toString())
+                }
+                if (item[0]=="platano"){
+                    platano.isChecked = true
+                    platanoc.setText(item[1].toString())
+                }
+                if (item[0]=="sandia"){
+                    sandia.isChecked = true
+                    sandiac.setText(item[1].toString())
+                }
+                if (item[0]=="uvas"){
+                    uvas.isChecked = true
+                    uvasc.setText(item[1].toString())
+                }
+                if (item[0]=="betabel"){
+                    betabel.isChecked = true
+                    betabelc.setText(item[1].toString())
+                }
+                if (item[0]=="cebolla"){
+                    cebolla.isChecked = true
+                    cebollac.setText(item[1].toString())
+                }
+                if (item[0]=="chayote"){
+                    chayote.isChecked = true
+                    chayotec.setText(item[1].toString())
+                }
+                if (item[0]=="chile"){
+                    chile.isChecked = true
+                    chilec.setText(item[1].toString())
+                }
+                if (item[0]=="elote"){
+                    elote.isChecked = true
+                    elotec.setText(item[1].toString())
+                }
+                if (item[0]=="jitomate"){
+                    jitomate.isChecked = true
+                    jitomatec.setText(item[1].toString())
+                }
+                if (item[0]=="papa"){
+                    papa.isChecked = true
+                    papac.setText(item[1].toString())
+                }
+                if (item[0]=="pepino"){
+                    pepino.isChecked = true
+                    pepinoc.setText(item[1].toString())
+                }
+                if (item[0]=="zanahoria"){
+                    zanahoria.isChecked = true
+                    zanac.setText(item[1].toString())
+                }
+                if (item[0]=="brocoli"){
+                    brocoli.isChecked = true
+                    brocolic.setText(item[1].toString())
+                }
+                if (item[0]==""){continue}
+
+            }
+        }
+            getActivity()?.let { it1 -> AlertDialog.Builder(it1).setMessage(mensaje).setPositiveButton("ok"){ d, i->d.dismiss()}
+                .show()
+            }
         }
         return view
     }
@@ -176,6 +286,20 @@ class GalleryFragment : Fragment() {
         return true
     }
 
+    private fun abrirDesdeMemoriaInterna(): String {
+        var data=""
+
+        try {
+            var flujoEntrada = BufferedReader(InputStreamReader(getActivity()?.openFileInput("archivo.txt")))
+            try{
+                data= flujoEntrada.readLine()}catch(io:NullPointerException){return ""}
+            flujoEntrada.close()
+
+        }catch(io: IOException){
+            return ""
+        }
+        return data
+    }
     
     override fun onDestroyView() {
         super.onDestroyView()

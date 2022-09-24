@@ -43,6 +43,7 @@ class SlideshowFragment : Fragment() {
         // AQUI
         //Lo que hacemos es llevarlo a la pantalla de frutas y verduras para que elija de nuevo sus productos
         btnEditar.setOnClickListener {
+
             val fragmentManager = requireActivity().supportFragmentManager
             val transaction: FragmentTransaction = fragmentManager.beginTransaction()
             transaction.setReorderingAllowed(true)
